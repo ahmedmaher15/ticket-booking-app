@@ -1,5 +1,6 @@
 import 'package:fluentui_icons/fluentui_icons.dart';
 import 'package:flutter/material.dart';
+import 'package:ticketbookingapp/dimensions.dart';
 import 'package:ticketbookingapp/screens/home_screen.dart';
 import 'package:ticketbookingapp/screens/profile_screen.dart';
 import 'package:ticketbookingapp/screens/search_Screen.dart';
@@ -33,7 +34,7 @@ class _MyBottomBarState extends State<MyBottomBar> {
         currentIndex: _selectedIndex,
         type: BottomNavigationBarType.fixed,
         onTap: _onItemTap,
-        elevation: 10,
+        elevation: Dimensions.height10,
         showSelectedLabels: false,
         showUnselectedLabels: false,
         selectedItemColor: Colors.grey,

@@ -2,6 +2,7 @@ import 'package:barcode_widget/barcode_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 import 'package:ticketbookingapp/app_style.dart';
+import 'package:ticketbookingapp/dimensions.dart';
 import 'package:ticketbookingapp/widgets/home_screen_widgets/ticket_view.dart';
 import 'package:ticketbookingapp/widgets/ticket_screen_widgets/column_layout.dart';
 import 'package:ticketbookingapp/widgets/ticket_screen_widgets/ticket_tab.dart';
@@ -19,12 +20,12 @@ class TicketScreen extends StatelessWidget {
       body: Stack(
           children: [
         ListView(
-          padding: const EdgeInsets.only(top: 60,left: 15,right: 15),
+          padding:  EdgeInsets.only(top: Dimensions.height20*3,left: Dimensions.width15,right: Dimensions.width15),
           children: [
-            Text("Tickets",style: Styles.headLineStyle1.copyWith(fontSize: 30),),
-            const Gap(15),
+            Text("Tickets",style: Styles.headLineStyle1.copyWith(fontSize: Dimensions.height30),),
+             Gap(Dimensions.height15),
             const AppTicketTab(text1: "AirLine tickets", text2: "Hotels"),
-            const Gap(15),
+             Gap(Dimensions.height15),
             Container(
               child: TicketView(
                 ticket: ticketList[0],
@@ -33,8 +34,8 @@ class TicketScreen extends StatelessWidget {
             ),
             /*plane*/
             Container(
-              padding: const EdgeInsets.only(left: 15,right: 15,top: 20,bottom: 20),
-              margin: const EdgeInsets.only(left: 16, right: 16),
+              padding:  EdgeInsets.only(left: Dimensions.width15,right: Dimensions.width15,top: Dimensions.height20,bottom: Dimensions.height20),
+              margin:  EdgeInsets.only(left: Dimensions.width15*1.0666,right: Dimensions.width15*1.0666,),
               decoration: const BoxDecoration(
                 color: Colors.white
               ),
@@ -53,12 +54,12 @@ class TicketScreen extends StatelessWidget {
             ),
             /*plane*/
             Container(
-              padding: EdgeInsets.symmetric(horizontal: 20),
+              padding: EdgeInsets.symmetric(horizontal: Dimensions.height20),
               child: AppLayoutWidget(isColor: false, sections: 15,),
             ),
             Container(
-              padding: const EdgeInsets.only(left: 15,right: 15,top: 20,bottom: 20),
-              margin: const EdgeInsets.only(left: 16, right: 16),
+              padding:  EdgeInsets.only(left: Dimensions.width15*1.0666,right: Dimensions.width15*1.0666,top: Dimensions.height20,bottom: Dimensions.height20),
+              margin:  EdgeInsets.only(left: Dimensions.width15*1.0666,right: Dimensions.width15*1.0666,),
               decoration: const BoxDecoration(
                   color: Colors.white
               ),
@@ -76,13 +77,13 @@ class TicketScreen extends StatelessWidget {
               ),
             ),
             Container(
-              padding: EdgeInsets.symmetric(horizontal: 20),
+              padding: EdgeInsets.symmetric(horizontal: Dimensions.height20),
               child: AppLayoutWidget(isColor: false, sections: 15,),
             ),
             /*visa*/
             Container(
-              padding: const EdgeInsets.only(left: 15,right: 15,top: 20,bottom: 20),
-              margin: const EdgeInsets.only(left: 16, right: 16),
+              padding:  EdgeInsets.only(left: Dimensions.width15,right: Dimensions.width15,top: Dimensions.height20,bottom: Dimensions.height20),
+              margin:  EdgeInsets.only(left: Dimensions.width15*1.0666,right: Dimensions.width15*1.0666,),
               decoration: const BoxDecoration(
                   color: Colors.white
               ),
@@ -100,7 +101,7 @@ class TicketScreen extends StatelessWidget {
                               Text("***2462",style: Styles.headLineStyle3.copyWith(color:Colors.black),),
                             ],
                           ),
-                          Gap(5),
+                          Gap(Dimensions.height5),
                           Text("Payment method",style: Styles.headLineStyle4.copyWith(color: Colors.grey.shade500),)
                         ],
                       ),
@@ -114,44 +115,45 @@ class TicketScreen extends StatelessWidget {
             SizedBox(height: 1,),
             /*Barcode*/
             Container(
-              height: 90,
-              margin: EdgeInsets.symmetric(horizontal: 15),
-              padding: EdgeInsets.symmetric(vertical:10),
+              height: Dimensions.height45*2,
+              margin: EdgeInsets.symmetric(horizontal: Dimensions.height15*1.06666),
+              padding: EdgeInsets.symmetric(vertical:Dimensions.width10),
               decoration:BoxDecoration(
                 color: Colors.white,
-                borderRadius: BorderRadius.only(bottomLeft: Radius.circular(21),bottomRight: Radius.circular(21))
+                borderRadius: BorderRadius.only(bottomLeft: Radius.circular(Dimensions.height20),bottomRight: Radius.circular(Dimensions.height20))
               ) ,
               child: Container(
-                margin: EdgeInsets.symmetric(horizontal: 15),
-                padding: EdgeInsets.symmetric(horizontal:7),
+                margin: EdgeInsets.symmetric(horizontal: Dimensions.height15),
+                padding: EdgeInsets.symmetric(horizontal:Dimensions.height15/2),
                 decoration: BoxDecoration(
 
                 ),
                 child: ClipRRect(
-                  borderRadius: BorderRadius.circular(15),
+                  borderRadius: BorderRadius.circular(Dimensions.height15),
                   child: BarcodeWidget(
                       data: 'https://www.linkedin.com/in/ahmed-maher-743915216/',
                       barcode: Barcode.code128(),
                     drawText: false,
                     color: Styles.textColor,
-                    width: double.infinity,height: 70,
+                    width: double.infinity,height: Dimensions.height50*1.4,
                   ),
                 ),
               ),
             ),
             /*Barcode*/
-            Gap(22),
-            TicketView(ticket: ticketList[1], isColor: true)
+            Gap(Dimensions.height20),
+            TicketView(ticket: ticketList[1], isColor: true),
+            Gap(Dimensions.height10),
           ],
         ),
         Positioned(
-          left: 23,
-          top: 256,
+          left: Dimensions.height10*2.3,
+          top: Dimensions.height50*5.12,
           child: Container(
-            padding: EdgeInsets.all(3),
+            padding: EdgeInsets.all(Dimensions.height5/1.6666),
             decoration: BoxDecoration(
               shape: BoxShape.circle,
-              border: Border.all(color: Styles.textColor,width: 2),
+              border: Border.all(color: Styles.textColor,width: Dimensions.height5/2.5),
             ),
             child: CircleAvatar(
               maxRadius: 4,
@@ -160,20 +162,20 @@ class TicketScreen extends StatelessWidget {
           ),
         ),
             Positioned(
-              right: 23,
-              top: 256,
+              right: Dimensions.height10*2.3,
+              top: Dimensions.height50*5.12,
               child: Container(
-                padding: EdgeInsets.all(3),
+                padding: EdgeInsets.all(Dimensions.height5/1.6666),
                 decoration: BoxDecoration(
                   shape: BoxShape.circle,
-                  border: Border.all(color: Styles.textColor,width: 2),
+                  border: Border.all(color: Styles.textColor,width: Dimensions.height5/2.5),
                 ),
                 child: CircleAvatar(
                   maxRadius: 4,
                   backgroundColor: Styles.textColor,
                 ),
               ),
-            )
+            ),
       ]),
     );
   }

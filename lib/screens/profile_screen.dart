@@ -2,6 +2,7 @@ import 'package:fluentui_icons/fluentui_icons.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 import 'package:ticketbookingapp/app_style.dart';
+import 'package:ticketbookingapp/dimensions.dart';
 import 'package:ticketbookingapp/widgets/ticket_screen_widgets/column_layout.dart';
 
 class ProfileScreen extends StatelessWidget {
@@ -13,21 +14,21 @@ class ProfileScreen extends StatelessWidget {
       backgroundColor: Styles.bgColor,
       body: ListView(
 
-        padding: const EdgeInsets.symmetric(horizontal: 20,vertical: 20),
+        padding:  EdgeInsets.symmetric(horizontal: Dimensions.height20,vertical: Dimensions.width20),
         children: [
-          const Gap(40),
+           Gap(Dimensions.height45),
           Row(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Container(
-                height: 90,
-                width: 86,
+                height: Dimensions.screenHeight/8.67,
+                width: Dimensions.screenWidth/4.56,
                 decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(12),
+                  borderRadius: BorderRadius.circular(Dimensions.height15),
                   image:const DecorationImage(image: AssetImage("assets/images/img_1.png")),
                 ),
               ),
-              const Gap(10),
+               Gap(Dimensions.height10),
               Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 mainAxisAlignment: MainAxisAlignment.start,
@@ -39,34 +40,34 @@ class ProfileScreen extends StatelessWidget {
                   Text(
                     "New-York",
                     style: TextStyle(
-                        fontSize: 14,
+                        fontSize: Dimensions.font16,
                         fontWeight: FontWeight.w500,
                         color: Colors.grey.shade500),
                   ),
-                  const Gap(6),
+                   Gap(Dimensions.height5),
                   Container(
                     decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(100),
+                      borderRadius: BorderRadius.circular(Dimensions.height45*2),
                       color: const Color(0xfffef4f3)
                     ),
-                    padding: const EdgeInsets.symmetric(horizontal: 3,vertical: 3),
+                    padding:  EdgeInsets.symmetric(horizontal: Dimensions.height5,vertical: Dimensions.width5),
                     child: Row(
                       children: [
                         Container(
-                          padding: const EdgeInsets.all(3),
+                          padding:  EdgeInsets.all(Dimensions.height5),
                           decoration: const BoxDecoration(
                             shape: BoxShape.circle,
                               color: Color(0xff526799)
                           ),
-                          child: const Icon(FluentSystemIcons.ic_fluent_shield_filled,color: Colors.white,size: 15,),
+                          child:  Icon(FluentSystemIcons.ic_fluent_shield_filled,color: Colors.white,size: Dimensions.height15,),
                         ),
-                        const Gap(5),
+                         Gap(Dimensions.width5),
                         const Text("Premium stutus",style: TextStyle( fontWeight: FontWeight.w600, color: Color(0xff526799)),)
                       ],
                     ),
                   )
                 ],),
-              const Gap(10),
+               Gap(Dimensions.width10),
               const Spacer(),
               Column(
                 children: [
@@ -78,35 +79,34 @@ class ProfileScreen extends StatelessWidget {
 
             ],
           ),
-          const Gap(8),
+           Gap(Dimensions.height5*1.5),
           Divider(color: Colors.grey.shade300,),
-          const Gap(8),
+           Gap(Dimensions.height5*1.5),
           Stack(
             children: [
               Container(
-                height: 90,
+                height: Dimensions.height45*2,
                 decoration: BoxDecoration(
                   color: Styles.primaryColor,
-                  borderRadius: BorderRadius.circular(18),
+                  borderRadius: BorderRadius.circular(Dimensions.height20),
 
                 ),
               ),
               Positioned(
-                top: -45,
-                right: -45,
+                top: -Dimensions.height45,
+                right: -Dimensions.width45,
                 child: Container(
-                  padding: const EdgeInsets.all(30),
+                  padding:  EdgeInsets.all(Dimensions.height15*2),
                   decoration: BoxDecoration(
                     color: Colors.transparent,
                     shape: BoxShape.circle,
-                    border: Border.all(width:18,color: const Color(0xff264cd2) )
+                    border: Border.all(width:Dimensions.width20,color: const Color(0xff264cd2) )
                   ),
                 ),
               ),
               Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 25,vertical: 14),
+                padding:  EdgeInsets.symmetric(horizontal: Dimensions.height20+Dimensions.height5,vertical: Dimensions.width15),
                 child: Row(
-
                   mainAxisAlignment: MainAxisAlignment.start,
                   crossAxisAlignment: CrossAxisAlignment.center ,
                   children: [
@@ -116,12 +116,12 @@ class ProfileScreen extends StatelessWidget {
                       child: Icon(
                         FluentSystemIcons.ic_fluent_lightbulb_filament_filled,
                         color: Styles.primaryColor,
-                        size: 30,
+                        size: Dimensions.height15*2,
                       ),
                     ),
-                    const Gap(12),
+                     Gap(Dimensions.width10),
                     Padding(
-                      padding: const EdgeInsets.only(bottom: 10),
+                      padding:  EdgeInsets.only(bottom: Dimensions.height10),
                       child: FittedBox(
                         child: Column(
                           mainAxisAlignment: MainAxisAlignment.start ,
@@ -129,13 +129,13 @@ class ProfileScreen extends StatelessWidget {
                           children: [
                             Text(
                               "you'v got a new award",
-                              style: Styles.headLineStyle2.copyWith(fontSize:23,
+                              style: Styles.headLineStyle2.copyWith(fontSize:Dimensions.screenHeight/33.95,
                                   fontWeight: FontWeight.bold, color: Colors.white),
                             ),
                             Text(
                               "you have 95 flights in a year",
                               style: Styles.headLineStyle2.copyWith(
-                                  fontWeight: FontWeight.w500, color: Colors.white.withOpacity(0.8),fontSize: 16),
+                                  fontWeight: FontWeight.w500, color: Colors.white.withOpacity(0.8),fontSize: Dimensions.screenHeight/48.81),
                             ),
                           ],
                         ),
@@ -145,13 +145,13 @@ class ProfileScreen extends StatelessWidget {
               ),
             ],
           ),
-          const Gap(25),
+           Gap(Dimensions.height25),
           Text("Accumulated mailes",style: Styles.headLineStyle2,),
-          const Gap(13),
+           Gap(Dimensions.height15),
           Container(
-            padding: EdgeInsets.symmetric(horizontal: 15),
+            padding: EdgeInsets.symmetric(horizontal: Dimensions.height15),
             decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(18),
+              borderRadius: BorderRadius.circular(Dimensions.radius20),
               color: Styles.bgColor,
               boxShadow: [
                 BoxShadow(
@@ -166,10 +166,10 @@ class ProfileScreen extends StatelessWidget {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    Text("19802",style: Styles.headLineStyle1.copyWith(fontSize: 55),),
+                    Text("19802",style: Styles.headLineStyle1.copyWith(fontSize: Dimensions.height50+Dimensions.height5),),
                   ],
                 ),
-                const Gap(20),
+                 Gap(Dimensions.width20),
                 Column(
                   children: [
                     Row(
@@ -179,7 +179,7 @@ class ProfileScreen extends StatelessWidget {
                         Text("23 May 2023",style: Styles.headLineStyle3,),
                       ],
                     ),
-                    Gap(20),
+                    Gap(Dimensions.height20),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
@@ -187,7 +187,7 @@ class ProfileScreen extends StatelessWidget {
                         AppColumnLayout(first: "AirLine CO", second: "Received from", alignment: CrossAxisAlignment.end),
                       ],
                     ),
-                    Gap(20),
+                    Gap(Dimensions.height20),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
@@ -195,7 +195,7 @@ class ProfileScreen extends StatelessWidget {
                         AppColumnLayout(first: "McDonal's", second: "Received from", alignment: CrossAxisAlignment.end),
                       ],
                     ),
-                    Gap(20),
+                    Gap(Dimensions.height20),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
@@ -203,7 +203,7 @@ class ProfileScreen extends StatelessWidget {
                         AppColumnLayout(first: "Exuma", second: "Received from", alignment: CrossAxisAlignment.end),
                       ],
                     ),
-                    Gap(15),
+                    Gap(Dimensions.height15),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [

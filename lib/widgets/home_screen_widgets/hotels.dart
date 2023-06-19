@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 import 'package:ticketbookingapp/app_style.dart';
+import 'package:ticketbookingapp/dimensions.dart';
 
 class HotelScreen extends StatelessWidget {
   const HotelScreen({Key? key, required this.image, required this.first, required this.scound, required this.third}) : super(key: key);
@@ -15,7 +16,7 @@ class HotelScreen extends StatelessWidget {
     return Container(
       decoration: BoxDecoration(
         color:  Colors.white,
-        borderRadius: BorderRadius.circular(24),
+        borderRadius: BorderRadius.circular(Dimensions.height25),
         boxShadow: [
           BoxShadow(
             color: Colors.grey.shade900,
@@ -25,21 +26,21 @@ class HotelScreen extends StatelessWidget {
           )
         ]
       ),
-      margin: EdgeInsets.only(right: 17,top: 5),
-      width: width*0.6,
-      height: 310,
-      padding: EdgeInsets.symmetric(horizontal: 15,vertical:17 ),
+      margin: EdgeInsets.only(right: Dimensions.width15*1.133,top: Dimensions.height5),
+      width:Dimensions.width50*4.4,
+      height: Dimensions.height50*6.2,
+      padding: EdgeInsets.symmetric(horizontal: Dimensions.height15,vertical:Dimensions.width20/1.666 ),
       child: Column(
         children: [
           Container(
-            height: 180,
+            height: Dimensions.height50*3.6,
             decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(20),
+              borderRadius: BorderRadius.circular(Dimensions.height20),
               color: Styles.primaryColor,
               image: DecorationImage(image: AssetImage(image),fit: BoxFit.cover)
             ),
           ),
-          Gap(10),
+          Gap(Dimensions.height10),
           Row(
             children: [
               Text(first,style: Styles.headLineStyle2,),

@@ -39,6 +39,7 @@ dependencies:
   gap:
   get:
   barcode_widget: 2.0.2
+  provider:
 
 dev_dependencies:
   flutter_test:

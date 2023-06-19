@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
+import 'package:ticketbookingapp/dimensions.dart';
 
 import '../../app_style.dart';
 
@@ -15,7 +16,7 @@ class AppColumnLayout extends StatelessWidget {
       crossAxisAlignment: alignment,
       children: [
         Text(first,style: Styles.headLineStyle3.copyWith(color:isColor==true?Colors.white: Colors.black),),
-        Gap(5),
+        Gap(Dimensions.height5),
         Text(second,style: Styles.headLineStyle4.copyWith(color:isColor==true?Colors.white: Colors.grey.shade500),)
       ],
     );

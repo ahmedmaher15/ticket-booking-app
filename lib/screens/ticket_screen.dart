@@ -116,7 +116,7 @@ class TicketScreen extends StatelessWidget {
             /*Barcode*/
             Container(
               height: Dimensions.height45*2,
-              margin: EdgeInsets.symmetric(horizontal: Dimensions.height15*1.06666),
+              margin: EdgeInsets.symmetric(horizontal: Dimensions.height15),
               padding: EdgeInsets.symmetric(vertical:Dimensions.width10),
               decoration:BoxDecoration(
                 color: Colors.white,
@@ -161,7 +161,7 @@ class TicketScreen extends StatelessWidget {
             ),
           ),
         ),
-            Positioned(
+        Positioned(
               right: Dimensions.height10*2.3,
               top: Dimensions.height50*5.12,
               child: Container(

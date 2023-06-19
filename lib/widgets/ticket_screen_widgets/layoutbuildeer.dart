@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:ticketbookingapp/dimensions.dart';
 
 class AppLayoutWidget extends StatelessWidget {
   const AppLayoutWidget({Key? key, required this.isColor, required this.sections}) : super(key: key);
@@ -17,8 +18,8 @@ final int sections;
             children: List.generate(
                 (constraints.constrainWidth() / sections).floor(),
                     (index) => SizedBox(
-                  width: 3,
-                  height: 1,
+                  width: Dimensions.width5/1.666,
+                  height: Dimensions.height5*.2,
                   child: DecoratedBox(
                     decoration: BoxDecoration(
                         color: isColor==true?Colors.white:Colors.grey.shade500),

@@ -1,4 +1,3 @@
-import 'package:fluentui_icons/fluentui_icons.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 import 'package:ticketbookingapp/app_style.dart';
@@ -14,8 +13,7 @@ class ProfileScreen extends StatelessWidget {
       backgroundColor: Styles.bgColor,
       body: Column(
         children: [
-          Expanded(
-            child: ListView(
+         ListView(
               padding:  EdgeInsets.symmetric(horizontal: Dimensions.height20,vertical: Dimensions.width20),
               children: [
                  Gap(Dimensions.height45),
@@ -61,7 +59,7 @@ class ProfileScreen extends StatelessWidget {
                                   shape: BoxShape.circle,
                                     color: Color(0xff526799)
                                 ),
-                                child:  Icon(FluentSystemIcons.ic_fluent_shield_filled,color: Colors.white,size: Dimensions.height15,),
+                                child:  Icon(Icons.shield,color: Colors.white,size: Dimensions.height15,),
                               ),
                                Gap(Dimensions.width5),
                                Text("Premium status",style: TextStyle(fontSize: Dimensions.height15, fontWeight: FontWeight.w600, color: Color(0xff526799)),)
@@ -115,7 +113,7 @@ class ProfileScreen extends StatelessWidget {
                             maxRadius: Dimensions.height25,
                             backgroundColor: Colors.white,
                             child: Icon(
-                              FluentSystemIcons.ic_fluent_lightbulb_filament_filled,
+                              Icons.lightbulb_outline_rounded,
                               color: Styles.primaryColor,
                               size: Dimensions.height15*2,
                             ),
@@ -219,7 +217,7 @@ class ProfileScreen extends StatelessWidget {
 
               ],
             ),
-          ),
+
         ],
       ),
     );

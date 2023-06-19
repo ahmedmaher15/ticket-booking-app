@@ -16,7 +16,9 @@ class SearchScreen extends StatelessWidget {
       backgroundColor: Styles.bgColor,
       body: Column(
         children: [
-          Expanded(
+          SizedBox(
+            height: double.maxFinite,
+            width: double.maxFinite,
             child: ListView(
               padding: EdgeInsets.symmetric(
                   horizontal: Dimensions.height20, vertical: Dimensions.width20),

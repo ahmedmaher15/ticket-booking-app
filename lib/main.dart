@@ -4,6 +4,7 @@ import 'package:get/get.dart';
 import 'package:provider/provider.dart';
 import 'package:ticketbookingapp/app_style.dart';
 import 'package:ticketbookingapp/provider/my_provider.dart';
+import 'package:ticketbookingapp/screens/search_Screen.dart';
 import 'package:ticketbookingapp/widgets/bootom_bar.dart';
 
 void main() {
@@ -33,7 +34,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: MyBottomBar(),
+      home: SearchScreen(),
     );
   }
 }

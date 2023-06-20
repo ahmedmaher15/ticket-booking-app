@@ -1,13 +1,10 @@
 import 'package:fluentui_icons/fluentui_icons.dart';
 import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
-import 'package:ticketbookingapp/dimensions.dart';
-import 'package:ticketbookingapp/screens/home_screen.dart';
-import 'package:ticketbookingapp/screens/profile_screen.dart';
-import 'package:ticketbookingapp/screens/search_Screen.dart';
-import 'package:ticketbookingapp/screens/ticket_screen.dart';
-import '../provider/my_provider.dart';
-import 'botton_nav.dart';
+
+import '../../screens/home_screen.dart';
+import '../../screens/profile_screen.dart';
+import '../../screens/search_Screen.dart';
+import '../../screens/ticket_screen.dart';
 
 class MyBottomBar extends StatefulWidget {
   const MyBottomBar({Key? key}) : super(key: key);
@@ -18,26 +15,30 @@ class MyBottomBar extends StatefulWidget {
 
 class _MyBottomBarState extends State<MyBottomBar> {
   int _selectedIndex=0;
-    List _widgetOptions=[
-      HomeScreen(),
-     SearchScreen(),
-     TicketScreen(),
-     ProfileScreen()
+  static final List<Widget> _widgetOptions=<Widget>[
+    const HomeScreen(),
+    const SearchScreen(),
+    const TicketScreen(),
+    const ProfileScreen()
   ];
   void _onItemTap(int index){
-   setState(() {
-     _selectedIndex=index;
-   });
+    setState(() {
+      _selectedIndex=index;
+    });
   }
   @override
   Widget build(BuildContext context) {
+    double screenHeight=MediaQuery.of(context).size.height;
+
+    double height10=screenHeight/78.1;
+
     return Scaffold(
-      body:  _widgetOptions[_selectedIndex],
+      body: Center(child: _widgetOptions[_selectedIndex]),
       bottomNavigationBar: BottomNavigationBar(
         currentIndex: _selectedIndex,
         type: BottomNavigationBarType.fixed,
         onTap: _onItemTap,
-        elevation: Dimensions.height10,
+        elevation: height10,
         showSelectedLabels: false,
         showUnselectedLabels: false,
         selectedItemColor: Colors.grey,
@@ -65,7 +66,8 @@ class _MyBottomBarState extends State<MyBottomBar> {
   }
 }
 
-  /*
+
+/*
     @override
   Widget build(BuildContext context) {
 
